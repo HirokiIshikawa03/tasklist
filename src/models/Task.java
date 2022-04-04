@@ -9,7 +9,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.NamedQueries;
+import org.hibernate.annotations.NamedQuery;
+
 @Entity
+@NamedQueries({
+    @NamedQuery(
+        name = "getAllMessages",
+        query = "SELECT m FROM Task AS m ORDER BY m.id DESC"
+    )
+})
 @Table(name = "tasks")
 public class Task {
     @Id
