@@ -4,14 +4,10 @@
 <c:import url="../layout/app.jsp">
     <c:param name="content">
         <c:choose>
-            <c:when test="${message != null}">
-                <h2>id : ${message.id} のメッセージ詳細ページ</h2>
+            <c:when test="${task != null}">
+                <h2>id : ${task.id} のメッセージ詳細ページ</h2>
 <table>
                     <tbody>
-                        <tr>
-                            <th>タイトル</th>
-                            <td><c:out value="${task.title}" /></td>
-                        </tr>
                         <tr>
                             <th>メッセージ</th>
                             <td><c:out value="${task.content}" /></td>
@@ -27,10 +23,7 @@
                     </tbody>
                 </table>
 
-                <p><a href="${pageContext.request.contextPath}/index">一覧に戻る</a></p>
-                <p>メッセージ：<c:out value="${task.content}" /></p>
-                <p>作成日時：<fmt:formatDate value="${task.created_at}" pattern="yyyy-MM-dd HH:mm:ss" /></p>
-                <p>更新日時：<fmt:formatDate value="${task.updated_at}" pattern="yyyy-MM-dd HH:mm:ss" /></p>
+
 
                 <p><a href="${pageContext.request.contextPath}/index">一覧に戻る</a></p>
                 <p><a href="${pageContext.request.contextPath}/edit?id=${task.id}">このメッセージを編集する</a></p>
